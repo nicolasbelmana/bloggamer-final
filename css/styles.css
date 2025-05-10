@@ -1,0 +1,168 @@
+@charset "UTF-8";
+/* base.scss - Estilos generales y estructura */
+/* Fuente */
+.atkinson-hyperlegible-mono-bold {
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.atkinson-hyperlegible-mono-regular {
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Generales */
+body {
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  color: #fff;
+}
+
+/* Header */
+.header {
+  background-color: #222;
+  padding: 10px;
+}
+
+.header-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+.logo span {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Navegación */
+.nav-main {
+  display: flex;
+  gap: 20px;
+}
+.nav-main a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+.nav-main a.active {
+  background-color: #007bff;
+  border-radius: 5px;
+}
+.nav-main ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Buscador */
+.search-input input {
+  padding: 5px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  width: 200px;
+}
+
+/* Contenido principal */
+.main-content.home, .main-content.gaming, .main-content.sobre-nosotros, .main-content.contacto {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Grid de noticias y juegos */
+.news-grid,
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* Ítems de noticias y juegos */
+.news-item,
+.game-item {
+  background-color: #444;
+  padding: 15px;
+}
+
+/* Imagen genérica */
+.news-image,
+.game-image {
+  background-color: #666;
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+/* Sección Sobre Nosotros */
+.about-us {
+  background-color: #444;
+  padding: 20px;
+  width: 80%;
+  text-align: center;
+}
+
+/* Contacto */
+.contact-form {
+  background-color: #444;
+  padding: 20px;
+  width: 80%;
+}
+.contact-form label,
+.contact-form input,
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #666;
+  background-color: #555;
+  color: #fff;
+}
+.contact-form button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background-color: #222;
+  padding: 10px;
+  text-align: center;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/*# sourceMappingURL=styles.css.map */
