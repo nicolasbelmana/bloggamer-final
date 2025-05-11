@@ -1,35 +1,46 @@
-/* base.scss - Estilos generales y estructura */
+/* base.scss - Estilos generales y estructura mejorados */
+
+/* Variables */
+$font-main: "Atkinson Hyperlegible Mono", sans-serif;
+$color-bg: #333;
+$color-primary: #007bff;
+$color-secondary: #222;
+$color-text: #fff;
+$color-box: #444;
+$color-hover: #666;
+$font-weight-bold: 600;
+$font-weight-regular: 300;
 
 /* Fuente */
 .atkinson-hyperlegible-mono-bold {
-  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  font-family: $font-main;
   font-optical-sizing: auto;
-  font-weight: 600;
+  font-weight: $font-weight-bold;
   font-style: normal;
 }
 
 .atkinson-hyperlegible-mono-regular {
-  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  font-family: $font-main;
   font-optical-sizing: auto;
-  font-weight: 300;
+  font-weight: $font-weight-regular;
   font-style: normal;
 }
 
 /* Generales */
 body {
-  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  font-family: $font-main;
   font-optical-sizing: auto;
-  font-weight: 300;
+  font-weight: $font-weight-regular;
   font-style: normal;
   margin: 0;
   padding: 0;
-  background-color: #333;
-  color: #fff;
+  background-color: $color-bg;
+  color: $color-text;
 }
 
 /* Header */
 .header {
-  background-color: #222;
+  background-color: $color-secondary;
   padding: 10px;
 }
 
@@ -58,13 +69,20 @@ body {
   gap: 20px;
 
   a {
-    color: #fff;
+    color: $color-text;
     text-decoration: none;
     padding: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 
     &.active {
-      background-color: #007bff;
+      background-color: $color-primary;
       border-radius: 5px;
+    }
+
+    &:hover {
+      background-color: $color-primary;
+      border-radius: 5px;
+      transform: scale(1.05);
     }
   }
 
@@ -79,10 +97,14 @@ body {
 .search-input {
   input {
     padding: 5px;
-    background-color: #555;
-    color: #fff;
+    background-color: $color-hover;
+    color: $color-text;
     border: none;
     width: 200px;
+
+    &:hover {
+      background-color: lighten($color-hover, 5%);
+    }
   }
 }
 
@@ -113,31 +135,53 @@ body {
 /* Ítems de noticias y juegos */
 .news-item,
 .game-item {
-  background-color: #444;
+  background-color: $color-box;
   padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
 }
 
 /* Imagen genérica */
 .news-image,
 .game-image {
-  background-color: #666;
+  background-color: $color-hover;
   height: 150px;
   margin-bottom: 10px;
 }
 
 /* Sección Sobre Nosotros */
 .about-us {
-  background-color: #444;
+  background-color: $color-box;
   padding: 20px;
   width: 80%;
   text-align: center;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
 }
 
 /* Contacto */
 .contact-form {
-  background-color: #444;
+  background-color: $color-box;
   padding: 20px;
   width: 80%;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
 
   label,
   input,
@@ -150,14 +194,14 @@ body {
   input,
   textarea {
     padding: 10px;
-    border: 1px solid #666;
-    background-color: #555;
-    color: #fff;
+    border: 1px solid $color-hover;
+    background-color: darken($color-hover, 5%);
+    color: $color-text;
   }
 
   button {
-    background-color: #007bff;
-    color: #fff;
+    background-color: $color-primary;
+    color: $color-text;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -166,12 +210,12 @@ body {
 
 /* Footer */
 .footer {
-  background-color: #222;
+  background-color: $color-secondary;
   padding: 10px;
   text-align: center;
 
   a {
-    color: #fff;
+    color: $color-text;
     text-decoration: none;
     margin: 0 10px;
   }

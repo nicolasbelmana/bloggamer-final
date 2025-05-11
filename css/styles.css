@@ -1,5 +1,6 @@
 @charset "UTF-8";
-/* base.scss - Estilos generales y estructura */
+/* base.scss - Estilos generales y estructura mejorados */
+/* Variables */
 /* Fuente */
 .atkinson-hyperlegible-mono-bold {
   font-family: "Atkinson Hyperlegible Mono", sans-serif;
@@ -58,10 +59,16 @@ body {
   color: #fff;
   text-decoration: none;
   padding: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .nav-main a.active {
   background-color: #007bff;
   border-radius: 5px;
+}
+.nav-main a:hover {
+  background-color: #007bff;
+  border-radius: 5px;
+  transform: scale(1.05);
 }
 .nav-main ul {
   list-style: none;
@@ -72,10 +79,13 @@ body {
 /* Buscador */
 .search-input input {
   padding: 5px;
-  background-color: #555;
+  background-color: #666;
   color: #fff;
   border: none;
   width: 200px;
+}
+.search-input input:hover {
+  background-color: rgb(114.75, 114.75, 114.75);
 }
 
 /* Contenido principal */
@@ -102,6 +112,14 @@ body {
 .game-item {
   background-color: #444;
   padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.news-item:hover,
+.game-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Imagen genérica */
@@ -118,6 +136,12 @@ body {
   padding: 20px;
   width: 80%;
   text-align: center;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-us:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Contacto */
@@ -125,6 +149,12 @@ body {
   background-color: #444;
   padding: 20px;
   width: 80%;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 .contact-form label,
 .contact-form input,
@@ -137,7 +167,7 @@ body {
 .contact-form textarea {
   padding: 10px;
   border: 1px solid #666;
-  background-color: #555;
+  background-color: rgb(89.25, 89.25, 89.25);
   color: #fff;
 }
 .contact-form button {
