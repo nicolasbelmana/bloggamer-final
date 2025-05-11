@@ -1,66 +1,62 @@
-/* base.scss - Estilos generales y estructura mejorados */
-
-/* Variables */
-$font-main: "Atkinson Hyperlegible Mono", sans-serif;
-$color-bg: #333;
-$color-primary: #007bff;
-$color-secondary: #222;
-$color-text: #fff;
-$color-box: #444;
-$color-hover: #666;
-$font-weight-bold: 600;
-$font-weight-regular: 300;
-
+/* base.scss - Estilos generales y estructura */
 /* Fuente */
 .atkinson-hyperlegible-mono-bold {
-  font-family: $font-main;
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
   font-optical-sizing: auto;
-  font-weight: $font-weight-bold;
+  font-weight: 600;
   font-style: normal;
 }
 
 .atkinson-hyperlegible-mono-regular {
-  font-family: $font-main;
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
   font-optical-sizing: auto;
-  font-weight: $font-weight-regular;
+  font-weight: 300;
   font-style: normal;
 }
 
 /* Generales */
 body {
-  font-family: $font-main;
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
   font-optical-sizing: auto;
-  font-weight: $font-weight-regular;
+  font-weight: 300;
   font-style: normal;
   margin: 0;
   padding: 0;
-  background-color: $color-bg;
-  color: $color-text;
+  background-color: #333;
+  color: #fff;
 }
 
 /* Header */
 .header {
-  background-color: $color-secondary;
+  background-color: #222;
   padding: 10px;
-}
 
-.header-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  .header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 /* Logo */
-.logo {
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
 
-  span {
-    font-size: 1.5em;
-    font-weight: bold;
-  }
+.logo span {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
 }
 
 /* Navegación */
@@ -69,42 +65,27 @@ body {
   gap: 20px;
 
   a {
-    color: $color-text;
+    color: #fff;
     text-decoration: none;
     padding: 10px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
 
     &.active {
-      background-color: $color-primary;
+      background-color: #007bff;
       border-radius: 5px;
     }
-
-    &:hover {
-      background-color: $color-primary;
-      border-radius: 5px;
-      transform: scale(1.05);
-    }
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
   }
 }
 
 /* Buscador */
-.search-input {
-  input {
-    padding: 5px;
-    background-color: $color-hover;
-    color: $color-text;
-    border: none;
-    width: 200px;
+.search-input input {
+  padding: 5px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  width: 200px;
 
-    &:hover {
-      background-color: lighten($color-hover, 5%);
-    }
+  &:hover {
+    background-color: #666;
   }
 }
 
@@ -135,7 +116,7 @@ body {
 /* Ítems de noticias y juegos */
 .news-item,
 .game-item {
-  background-color: $color-box;
+  background-color: #444;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -150,38 +131,29 @@ body {
 /* Imagen genérica */
 .news-image,
 .game-image {
-  background-color: $color-hover;
+  background-color: #666;
   height: 150px;
-  margin-bottom: 10px;
+  width: 100%; // Se adapta al contenedor
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Sección Sobre Nosotros */
 .about-us {
-  background-color: $color-box;
+  background-color: #444;
   padding: 20px;
   width: 80%;
   text-align: center;
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
 }
 
 /* Contacto */
 .contact-form {
-  background-color: $color-box;
+  background-color: #444;
   padding: 20px;
   width: 80%;
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
 
   label,
   input,
@@ -194,14 +166,14 @@ body {
   input,
   textarea {
     padding: 10px;
-    border: 1px solid $color-hover;
-    background-color: darken($color-hover, 5%);
-    color: $color-text;
+    border: 1px solid #666;
+    background-color: #555;
+    color: #fff;
   }
 
   button {
-    background-color: $color-primary;
-    color: $color-text;
+    background-color: #007bff;
+    color: #fff;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -210,19 +182,59 @@ body {
 
 /* Footer */
 .footer {
-  background-color: $color-secondary;
+  background-color: #222;
   padding: 10px;
   text-align: center;
 
   a {
-    color: $color-text;
+    color: #fff;
     text-decoration: none;
     margin: 0 10px;
   }
+}
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.nav-main ul,
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header .header-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav-main {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #222;
+    padding: 10px;
+    gap: 10px;
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  .search-input input {
+    width: 100%;
+  }
+
+  .news-grid,
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-content {
+    padding: 10px;
   }
 }

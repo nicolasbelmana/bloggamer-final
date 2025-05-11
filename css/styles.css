@@ -1,6 +1,5 @@
 @charset "UTF-8";
-/* base.scss - Estilos generales y estructura mejorados */
-/* Variables */
+/* base.scss - Estilos generales y estructura */
 /* Fuente */
 .atkinson-hyperlegible-mono-bold {
   font-family: "Atkinson Hyperlegible Mono", sans-serif;
@@ -33,8 +32,7 @@ body {
   background-color: #222;
   padding: 10px;
 }
-
-.header-bottom {
+.header .header-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,9 +43,20 @@ body {
   text-decoration: none;
   color: inherit;
 }
+
 .logo span {
   font-size: 1.5em;
   font-weight: bold;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
 }
 
 /* Navegación */
@@ -59,33 +68,22 @@ body {
   color: #fff;
   text-decoration: none;
   padding: 10px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .nav-main a.active {
   background-color: #007bff;
   border-radius: 5px;
 }
-.nav-main a:hover {
-  background-color: #007bff;
-  border-radius: 5px;
-  transform: scale(1.05);
-}
-.nav-main ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
 
 /* Buscador */
 .search-input input {
   padding: 5px;
-  background-color: #666;
+  background-color: #555;
   color: #fff;
   border: none;
   width: 200px;
 }
 .search-input input:hover {
-  background-color: rgb(114.75, 114.75, 114.75);
+  background-color: #666;
 }
 
 /* Contenido principal */
@@ -127,7 +125,10 @@ body {
 .game-image {
   background-color: #666;
   height: 150px;
-  margin-bottom: 10px;
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Sección Sobre Nosotros */
@@ -137,11 +138,6 @@ body {
   width: 80%;
   text-align: center;
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.about-us:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Contacto */
@@ -150,11 +146,6 @@ body {
   padding: 20px;
   width: 80%;
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.contact-form:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 .contact-form label,
 .contact-form input,
@@ -167,7 +158,7 @@ body {
 .contact-form textarea {
   padding: 10px;
   border: 1px solid #666;
-  background-color: rgb(89.25, 89.25, 89.25);
+  background-color: #555;
   color: #fff;
 }
 .contact-form button {
@@ -189,10 +180,45 @@ body {
   text-decoration: none;
   margin: 0 10px;
 }
+
+.nav-main ul,
 .footer ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header .header-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+  .nav-main {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #222;
+    padding: 10px;
+    gap: 10px;
+  }
+  .nav-main.active {
+    display: flex;
+  }
+  .search-input input {
+    width: 100%;
+  }
+  .news-grid,
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+  .main-content {
+    padding: 10px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
