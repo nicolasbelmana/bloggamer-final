@@ -3,11 +3,11 @@
   --fondo-principal: #1e1e1e;
   --texto-principal: #e0e0e0;
   --texto-secundario: #aaaaaa;
-  --acento-activo: #e63946;
+  --acento-activo: #5e5c5c;
   --hover-menu-nav: #2c2c2c;
   --borde-separacion: #333333;
-  --boton-destacado: #3a86ff;
-  --hover-boton: #2f70d6;
+  --boton-destacado: #4d5157;
+  --hover-boton: #4d5157;
 }
 
 /* Generales */
@@ -99,8 +99,8 @@ body {
 .news-grid,
 .games-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 10px;
   width: 100%;
 }
 
@@ -108,10 +108,11 @@ body {
 .news-item,
 .game-item {
   background-color: var(--borde-separacion);
-  padding: 15px;
+  padding: 25px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 350px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 .news-item:hover,
 .game-item:hover {
@@ -123,7 +124,7 @@ body {
 .news-image,
 .game-image {
   background-color: var(--borde-separacion);
-  height: 150px;
+  height: 200px;
   width: 100%;
   max-width: 100%;
   object-fit: cover;
@@ -142,8 +143,8 @@ body {
 /* Contacto */
 .contact-form {
   background-color: var(--borde-separacion);
-  padding: 20px;
-  width: 80%;
+  padding: 60px;
+  width: 100%;
   border-radius: 8px;
 }
 .contact-form label,
@@ -163,7 +164,7 @@ body {
 .contact-form button {
   background-color: var(--boton-destacado);
   color: var(--texto-principal);
-  padding: 10px 20px;
+  padding: 20px 20px;
   border: none;
   cursor: pointer;
 }
