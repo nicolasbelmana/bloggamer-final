@@ -1,18 +1,13 @@
 @charset "UTF-8";
-/* base.scss - Estilos generales y estructura */
-/* Fuente */
-.atkinson-hyperlegible-mono-bold {
-  font-family: "Atkinson Hyperlegible Mono", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.atkinson-hyperlegible-mono-regular {
-  font-family: "Atkinson Hyperlegible Mono", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
+:root {
+  --fondo-principal: #1e1e1e;
+  --texto-principal: #e0e0e0;
+  --texto-secundario: #aaaaaa;
+  --acento-activo: #e63946;
+  --hover-menu-nav: #2c2c2c;
+  --borde-separacion: #333333;
+  --boton-destacado: #3a86ff;
+  --hover-boton: #2f70d6;
 }
 
 /* Generales */
@@ -23,13 +18,13 @@ body {
   font-style: normal;
   margin: 0;
   padding: 0;
-  background-color: #333;
-  color: #fff;
+  background-color: var(--fondo-principal);
+  color: var(--texto-principal);
 }
 
 /* Header */
 .header {
-  background-color: #222;
+  background-color: var(--borde-separacion);
   padding: 10px;
 }
 .header .header-bottom {
@@ -55,7 +50,7 @@ body {
   background: none;
   border: none;
   font-size: 2rem;
-  color: #fff;
+  color: var(--texto-principal);
   cursor: pointer;
 }
 
@@ -65,25 +60,29 @@ body {
   gap: 20px;
 }
 .nav-main a {
-  color: #fff;
+  color: var(--texto-principal);
   text-decoration: none;
   padding: 10px;
 }
 .nav-main a.active {
-  background-color: #007bff;
+  background-color: var(--acento-activo);
   border-radius: 5px;
+}
+.nav-main a:hover {
+  background-color: var(--hover-menu-nav); /* Gris más claro */
+  color: var(--texto-principal); /* Gris claro para el texto */
 }
 
 /* Buscador */
 .search-input input {
   padding: 5px;
-  background-color: #555;
-  color: #fff;
+  background-color: var(--hover-menu-nav);
+  color: var(--texto-principal);
   border: none;
   width: 200px;
 }
 .search-input input:hover {
-  background-color: #666;
+  background-color: var(--borde-separacion);
 }
 
 /* Contenido principal */
@@ -108,7 +107,7 @@ body {
 /* Ítems de noticias y juegos */
 .news-item,
 .game-item {
-  background-color: #444;
+  background-color: var(--borde-separacion);
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -123,7 +122,7 @@ body {
 /* Imagen genérica */
 .news-image,
 .game-image {
-  background-color: #666;
+  background-color: var(--borde-separacion);
   height: 150px;
   width: 100%;
   max-width: 100%;
@@ -133,7 +132,7 @@ body {
 
 /* Sección Sobre Nosotros */
 .about-us {
-  background-color: #444;
+  background-color: var(--borde-separacion);
   padding: 20px;
   width: 80%;
   text-align: center;
@@ -142,7 +141,7 @@ body {
 
 /* Contacto */
 .contact-form {
-  background-color: #444;
+  background-color: var(--borde-separacion);
   padding: 20px;
   width: 80%;
   border-radius: 8px;
@@ -157,26 +156,29 @@ body {
 .contact-form input,
 .contact-form textarea {
   padding: 10px;
-  border: 1px solid #666;
-  background-color: #555;
-  color: #fff;
+  border: 1px solid var(--borde-separacion);
+  background-color: var(--hover-menu-nav);
+  color: var(--texto-principal);
 }
 .contact-form button {
-  background-color: #007bff;
-  color: #fff;
+  background-color: var(--boton-destacado);
+  color: var(--texto-principal);
   padding: 10px 20px;
   border: none;
   cursor: pointer;
 }
+.contact-form button:hover {
+  background-color: var(--hover-boton);
+}
 
 /* Footer */
 .footer {
-  background-color: #222;
+  background-color: var(--borde-separacion);
   padding: 10px;
   text-align: center;
 }
 .footer a {
-  color: #fff;
+  color: var(--texto-principal);
   text-decoration: none;
   margin: 0 10px;
 }
@@ -202,7 +204,7 @@ body {
     display: none;
     flex-direction: column;
     width: 100%;
-    background-color: #222;
+    background-color: var(--borde-separacion);
     padding: 10px;
     gap: 10px;
   }

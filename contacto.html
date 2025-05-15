@@ -65,14 +65,26 @@
         <a href="sobre-nosotros.html">Sobre nosotros</a>
         <a href="contacto.html">Contacto</a>
     </footer>
-    <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav-main");
+<script>
+  // Lógica para abrir/cerrar el menú hamburguesa
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMain = document.querySelector('.nav-main');
 
-    toggle.addEventListener("click", () => {
-      nav.classList.toggle("active");
-    });
+  menuToggle.addEventListener('click', () => {
+    navMain.classList.toggle('show');
+  });
+
+  // Lógica para marcar dinámicamente el enlace activo
+  const links = document.querySelectorAll('.nav-main a');
+  const currentPage = window.location.pathname.split('/').pop();
+
+  links.forEach(link => {
+    const linkPage = link.getAttribute('href');
+    if (linkPage === currentPage) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
   });
 </script>
 </body>
